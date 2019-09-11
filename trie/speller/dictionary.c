@@ -77,7 +77,7 @@ bool load(const char *dictionary)
     // Insert words into trie
     while (fscanf(file, "%s", word) != EOF)
     {
-        if (insert(word))
+        if (!insert(word))
         {
             fclose(file);
             return false;
